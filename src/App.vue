@@ -5,9 +5,6 @@
         <h1 class="text-4xl font-bold text-gray-900">答案之书</h1>
         <p class="text-xl text-gray-400">想要获得人生问题的神秘答案吗？</p>
       </div>
-      <div class="w-full h-1/4 bg-amber-100 rounded-xl flex items-center justify-center">
-        <span>AD</span>
-      </div>
       <div class="flex gap-4 w-full">
         <input type="text" placeholder="请输入您的问题" ref="ipu"
           class="text-xl grow p-8 border w-3/4 border-gray-200 rounded-xl focus:outline-blue-400"
@@ -16,7 +13,7 @@
           提交
         </button>
       </div>
-      <div class="w-full h-1/3 border border-gray-200 rounded-4xl flex flex-col justify-center items-center">
+      <div class="w-full h-2/3 border border-gray-200 rounded-4xl flex flex-col justify-center items-center">
         <p v-if="data" class="text-2xl  text-gray-400">{{ data.question }}</p>
         <p v-if="data" class="text-4xl  font-extrabold">{{ data.answer }}</p>
       </div>
