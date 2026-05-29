@@ -9,7 +9,7 @@
             <p class="text-2xl text-[#858276]">诠释</p>
             <p class="text-4xl mt-8 animate-text" :key="webStore.data.answer">{{ webStore.data.answer }}</p>
         </div>
-        <p class="text-right text-[#858276]">正文 · 01</p>
+        <p class="text-right text-[#858276]">&copy; 2026 Book Of Answers All rights reserved</p>
     </div>
 </template>
 AC
