@@ -1,1 +1,108 @@
 @import "tailwindcss";
+
+@layer components {
+    * {
+        @apply m-0 p-0 box-border;
+    }
+
+    body {
+        @apply flex justify-center items-center min-h-dvh bg-gray-200 font-serif p-4;
+    }
+
+    .book-cover {
+        @apply flex justify-center items-center w-[90dvw] h-[90dvh] bg-[#1e2d3d] rounded overflow-hidden;
+        box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .book-stack {
+        @apply relative flex w-[95%] h-[95%];
+        box-shadow:
+            -1px 1px 0px #d4d4cb,
+            -2px 2px 0px #c9c9c0,
+            -3px 3px 1px #bfbfb4,
+            -4px 4px 1px #b5b5aa,
+            -5px 5px 2px #aaaa9f,
+            -6px 6px 3px rgba(0, 0, 0, 0.15),
+            1px 1px 0px #d4d4cb,
+            2px 2px 0px #c9c9c0,
+            3px 3px 1px #bfbfb4,
+            4px 4px 1px #b5b5aa,
+            5px 5px 2px #aaaa9f,
+            6px 6px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    .book-bar {
+        @apply absolute w-2 h-full bg-[#8b1e20];
+        left: 50%;
+        transform: translateX(-50%);
+        background-image:
+            linear-gradient(90deg,
+                #701618 0%,
+                #8b1e20 30%,
+                #a62b2e 60%,
+                #701618 100%);
+
+        filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+        z-index: 10;
+    }
+
+    .line {
+        @apply border-b border-gray-400 text-[#858276] pb-4;
+    }
+
+    .page {
+        @apply flex flex-col justify-between w-1/2 h-full p-10 text-center overflow-auto;
+    }
+
+    .left {
+        @apply bg-linear-to-l from-[#E2DEDA] to-[#FFFAFA];
+        box-shadow:
+            inset -20px 0 30px rgba(0, 0, 0, .08);
+    }
+
+    .right {
+        @apply bg-linear-to-r from-[#E2DEDA] to-[#FFFAFA];
+        box-shadow:
+            inset 20px 0 30px rgba(0, 0, 0, .08);
+    }
+
+    .input {
+        @apply mt-4 p-3 border border-gray-400 rounded outline-[#8b1e20] w-full bg-transparent backdrop-blur;
+    }
+
+    @media (max-width: 768px) {
+
+        .book-cover {
+            @apply block-auto min-h-dvh rounded;
+        }
+
+        .book-stack {
+            @apply flex-col;
+        }
+
+        .book-bar {
+            @apply w-full h-2;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .page {
+            @apply w-full h-1/2 p-8;
+        }
+    }
+}
+
+@theme {
+    --animate-text: text 2s ease-in-out;
+
+    @keyframes text {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
